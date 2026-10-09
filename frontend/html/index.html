@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+      <div id="user-info" class="hidden">
+        <span id="user-email"></span>
+        <button id="logout-btn" class="btn-danger">Sair</button>
+      </div>
+    </header>
+
+   
+    <section id="auth-section" class="card">
+      <div class="tabs">
+        <button id="tab-login" class="tab-btn active">Entrar</button>
+        <button id="tab-register" class="tab-btn">Cadastrar</button>
+      </div>
+
+      
+      <form id="login-form">
+        <h2>Acessar Conta</h2>
+        <div class="form-group">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Senha</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+
+     
+      <form id="register-form" class="hidden">
+        <h2>Criar Conta</h2>
+        <div class="form-group">
+          <label for="register-name">Nome</label>
+          <input type="text" id="register-name" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">E-mail</label>
+          <input type="email" id="register-email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Senha</label>
+          <input type="password" id="register-password" placeholder="Mínimo 6 caracteres" required minlength="6">
+        </div>
+        <button type="submit" class="btn-primary">Cadastrar</button>
+      </form>
+
+      <p id="auth-error" class="error-msg hidden"></p>
+    </section>
+
+   
+    <main id="tasks-section" class="hidden">
+     
+      <section class="card">
+        <h2>Nova Tarefa</h2>
+        <form id="task-form">
+          <div class="form-group">
+            <label for="task-title">Título</label>
+            <input type="text" id="task-title" placeholder="O que precisa ser feito?" required>
+          </div>
+          <div class="form-group">
+            <label for="task-description">Descrição (opcional)</label>
+            <textarea id="task-description" rows="3" placeholder="Detalhes da tarefa..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Adicionar Tarefa</button>
+        </form>
+      </section>
+
+      
+      <section class="card">
+        <h2>Minhas Tarefas</h2>
+        <div id="loading" class="hidden">Carregando tarefas...</div>
+        <ul id="tasks-list" class="tasks-list"></ul>
+        <p id="empty-list-msg" class="hidden">Nenhuma tarefa encontrada. Crie uma acima!</p>
+      </section>
+    </main>
+  </div>
+
+  <script src=""></script>
+</body>
+</html>
